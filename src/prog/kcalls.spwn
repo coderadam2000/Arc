@@ -1,7 +1,8 @@
+extract import "exec.spwn"
+
 // Processes
 exec_proc = (process: @string) {
-    // Will execute a process.
-    // Doesn't do anything at the moment.
+    execute(process)
 }
 
 term_proc = (process_id: @number) {
