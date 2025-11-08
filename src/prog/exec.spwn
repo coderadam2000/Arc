@@ -1,0 +1,24 @@
+// Program Memory
+let mem = []
+
+// Memory of the instructions of each program
+// Malleable for installation and removal of programs (eventually)
+// Formatted program_name:spwn_code
+let progs = {hello_world:"print("Hello, World!")"}
+
+execute = (prog: @string) {
+    if progs has prog {
+        mem.push(prog)
+        eval(prog)
+        // If someone wants to change this a bit, go ahead!
+    } else {
+        print("Error: The process {} could not be found.".fmt(prog))
+        // I might want to have a dedicated error system at some point
+    }
+}
+
+return {
+    mem
+    progs
+    execute
+}
